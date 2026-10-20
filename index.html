@@ -3,274 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ammar Akhund | Portfolio</title>
-    <meta name="description" content="Portfolio of Ammar Akhund - Economics, Statistics, and Data Analysis.">
-    
-    <!-- Google Fonts: Outfit -->
+    <title>Ammar Akhund — I build AI tools real people use</title>
+    <meta name="description" content="Ammar Akhund is a student in Winnipeg who builds and ships AI tools that real people use every day, and sets up AI for small businesses.">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='black'/><text x='50%' y='54%' font-family='monospace' font-weight='700' font-size='28' fill='white' text-anchor='middle' dominant-baseline='middle'>AA</text></svg>">
+
+    <!-- Mark JS as available so scroll-reveal styles only apply when they can be undone -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Fonts: Inter (UI) + JetBrains Mono (labels, symbols, numbers) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Vanta.js Background Container -->
-    <div id="vanta-bg"></div>
+    <!-- Icon sprite: reference with <svg><use href="#i-name"/></svg> -->
+    <svg xmlns="http://www.w3.org/2000/svg" hidden>
+        <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+        <symbol id="i-sound-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></g></symbol>
+        <symbol id="i-sound-on" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></g></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    </svg>
 
-    <nav class="navbar">
-        <a href="#hero" class="logo">AA.</a>
-        <ul class="nav-links">
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <main id="smooth-wrapper">
-        <div id="smooth-content">
-            
-            <!-- HERO SECTION -->
-            <section id="hero" class="section">
-                <div class="hero-content">
-                    <div class="glitch-wrapper">
-                        <h1 class="hero-title">Ammar Akhund</h1>
-                    </div>
-                    <h2 class="hero-subtitle">Economics & Statistics @ UofM | <span class="gradient-text">Data Analyst</span></h2>
-                    <p class="hero-desc">Transforming complex datasets into actionable insights. Passionate about financial modeling, machine learning, and strategic communication.</p>
-                    
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/ammar-akhund-145b17245/" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
-                        <a href="mailto:ammar.akhund2017@gmail.com"><i class="ph ph-envelope"></i></a>
-                        <a href="tel:431-335-4259"><i class="ph ph-phone"></i></a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- EXPERIENCE SECTION -->
-            <section id="experience" class="section">
-                <h2 class="section-title">Work & Volunteer <span class="gradient-text">Experience</span></h2>
-                
-                <div class="timeline">
-                    <!-- Loblaw -->
-                    <div class="timeline-item gs-reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">Sep 2022 – Present | Winnipeg, MB</span>
-                            <h3>Customer Service Representative</h3>
-                            <h4>Loblaw (Real Canadian Superstore)</h4>
-                            <ul>
-                                <li>Processed high-volume financial transactions and balanced daily till records accurately using ERP systems (SAP).</li>
-                                <li>Resolved complex client issues and de-escalated conflicts to ensure retention.</li>
-                                <li>Maintained strict compliance with cash handling and inventory management protocols.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Forage -->
-                    <div class="timeline-item gs-reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">Feb 2026 – Present | Remote</span>
-                            <h3>Virtual Job Simulations</h3>
-                            <h4>Forage (Goldman Sachs, Bank of America & KPMG)</h4>
-                            <ul>
-                                <li><strong>Goldman Sachs:</strong> Assessed operational risks and identified vulnerabilities.</li>
-                                <li><strong>Bank of America:</strong> Analyzed client portfolios and recommended asset allocation strategies.</li>
-                                <li><strong>KPMG:</strong> Conducted data quality reviews on large datasets ensuring compliance in financial reporting.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Personal Trainer -->
-                    <div class="timeline-item gs-reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">May 2025 – Present | Winnipeg, MB</span>
-                            <h3>Personal Trainer & Digital Creator</h3>
-                            <h4>Freelance (@xakhundx)</h4>
-                            <ul>
-                                <li>Built trusting relationships by tailoring fitness plans to client lifestyles.</li>
-                                <li>Provided ongoing mentorship ensuring clients felt confident to reach targets.</li>
-                                <li>Maintained high retention through open communication.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Volunteer -->
-                    <div class="timeline-item gs-reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-date">2019 – Present</span>
-                            <h3>Volunteer Leadership</h3>
-                            <h4>Multiple Organizations</h4>
-                            <ul>
-                                <li><strong>Réseau Compassion Network:</strong> Ambassador & Concierge (Dec 2025 – Present)</li>
-                                <li><strong>Manitoba Hydro:</strong> Security Management Volunteer (Nov 2025)</li>
-                                <li><strong>Aga Khan University:</strong> Research Analyst, Covid-19 Case Study (Jul 2019 – Jul 2020)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PROJECTS SECTION -->
-            <section id="projects" class="section">
-                <h2 class="section-title">Data <span class="gradient-text">Projects</span></h2>
-                
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card glass-card gs-reveal">
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">XGBoost</span>
-                        </div>
-                        <div class="project-header">
-                            <h3>Renewable Integration & Price Forecaster</h3>
-                            <a href="https://github.com/Maro1317/AESO-NetLoad-Risk-Forecaster" target="_blank" class="github-link" title="View Source Code">
-                                <i class="ph ph-github-logo"></i>
-                            </a>
-                        </div>
-                        <span class="project-date">January 2026</span>
-                        <p>Built a machine learning system predicting "Net Load" and Wholesale Electricity Price 24 hours in advance.</p>
-                        <ul class="project-bullets">
-                            <li>Engineered data pipeline ingesting XML/CSV feeds via Pandas.</li>
-                            <li>Stored in time-series optimized DB / AWS S3.</li>
-                            <li>Implemented predictive script using XGBoost & scikit-learn.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card glass-card gs-reveal">
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Power BI</span>
-                        </div>
-                        <div class="project-header">
-                            <h3>Sales Data Dashboard</h3>
-                        </div>
-                        <span class="project-date">December 2025</span>
-                        <p>Developed an interactive dashboard to analyze and visualize sales trends from large datasets.</p>
-                        <ul class="project-bullets">
-                            <li>Leveraged Python (Pandas) for data wrangling.</li>
-                            <li>Designed robust Tableau/Power BI dashboards to track KPIs.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card glass-card gs-reveal">
-                        <div class="project-tags">
-                            <span class="tag">R</span>
-                            <span class="tag">Statistics</span>
-                        </div>
-                        <div class="project-header">
-                            <h3>Statistical Analysis of Economic Data</h3>
-                        </div>
-                        <span class="project-date">December 2025</span>
-                        <p>In-depth statistical breakdown of economic datasets to find actionable correlations.</p>
-                        <ul class="project-bullets">
-                            <li>Conducted hypothesis testing on a Superstore Sales dataset using R.</li>
-                            <li>Identified significant correlations and built a basic predictive model.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SKILLS SECTION -->
-            <section id="skills" class="section">
-                <h2 class="section-title">Core <span class="gradient-text">Competencies</span></h2>
-                
-                <div class="skills-container">
-                    <div class="skill-category glass-card gs-reveal">
-                        <h3><i class="ph ph-bank"></i> Banking & Finance</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Risk Assessment</span>
-                            <span class="tag">KYC/AML Compliance</span>
-                            <span class="tag">Wealth Mgmt</span>
-                            <span class="tag">Financial Modeling</span>
-                            <span class="tag">Auditing</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category glass-card gs-reveal">
-                        <h3><i class="ph ph-chart-line-up"></i> Data Analysis</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Statistical Forecasting</span>
-                            <span class="tag">Regression Analysis</span>
-                            <span class="tag">Hypothesis Testing</span>
-                            <span class="tag">Market Trend ID</span>
-                            <span class="tag">AI/ML Training</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category glass-card gs-reveal">
-                        <h3><i class="ph ph-code"></i> Technical Tools</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">R</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Power BI</span>
-                            <span class="tag">SAP</span>
-                            <span class="tag">Advanced Excel</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category glass-card gs-reveal">
-                        <h3><i class="ph ph-translate"></i> Languages</h3>
-                        <div class="skill-tags">
-                            <span class="tag">English (Fluent)</span>
-                            <span class="tag">Urdu (Fluent)</span>
-                            <span class="tag">Sindhi (Fluent)</span>
-                            <span class="tag">German (A1)</span>
-                            <span class="tag">French (Basic)</span>
-                            <span class="tag">Arabic</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FOOTER / CONTACT -->
-            <footer id="contact" class="footer gs-reveal">
-                <div class="footer-content">
-                    <h2>Let's <span class="gradient-text">Connect</span></h2>
-                    <p>Currently open to new opportunities in data analysis and finance.</p>
-                    <div class="contact-info">
-                        <a href="mailto:ammar.akhund2017@gmail.com" class="contact-link"><i class="ph ph-envelope"></i> ammar.akhund2017@gmail.com</a>
-                        <a href="tel:431-335-4259" class="contact-link"><i class="ph ph-phone"></i> 431-335-4259</a>
-                        <p><i class="ph ph-map-pin"></i> Winnipeg, MB, Canada</p>
-                    </div>
-                </div>
-                <div class="copyright">
-                    © 2026 Ammar Akhund. All rights reserved.
-                </div>
-            </footer>
-
+    <!-- ============================== NAV ============================== -->
+    <header class="nav" id="top">
+        <div class="container nav__inner">
+            <a href="#top" class="nav__logo" aria-label="Ammar Akhund, back to top">AA</a>
+            <nav aria-label="Primary">
+                <ul class="nav__links">
+                    <li class="nav__hide-sm"><a href="#projects">Work</a></li>
+                    <li class="nav__hide-sm"><a href="#skills">Skills</a></li>
+                    <li class="nav__hide-sm"><a href="#journey">Journey</a></li>
+                    <li><a href="#contact" class="nav__cta">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ============================== HERO ============================== -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero__grid">
+
+                <!-- Headline first on mobile so the 10-second message lands above the fold -->
+                <div class="hero__copy">
+                    <p class="eyebrow">Ammar Akhund <span aria-hidden="true">·</span> Winnipeg, MB</p>
+                    <h1 id="hero-title" class="hero__title">I build AI tools real people use every day.</h1>
+                    <p class="hero__sub">Economics &amp; Stats student at UofM. My AI focus app runs daily at my workplace, and I set up AI for small businesses.</p>
+                    <div class="hero__ctas">
+                        <a href="#projects" class="btn btn--solid">See the work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                        <a href="#services" class="btn btn--ghost">Work with me</a>
+                    </div>
+                </div>
+
+                <!-- Talking video. Drop assets/hero.mp4 + assets/hero-poster.jpg in and it just works.
+                     Missing files fall back to the photo, then to the monogram. -->
+                <figure class="hero__media" data-hero-media>
+                    <div class="media__fallback" aria-hidden="true">
+                        <span class="media__mono">AA</span>
+                        <span class="media__note">Intro video coming soon</span>
+                    </div>
+                    <img class="media__poster" src="assets/hero-poster.jpg" alt="Ammar Akhund" width="800" height="1000" fetchpriority="high" data-optional>
+                    <video class="media__video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="Ammar introduces himself and what he builds">
+                        <source src="assets/hero.mp4" type="video/mp4">
+                        <track kind="captions" src="assets/hero.vtt" srclang="en" label="English" default>
+                    </video>
+                    <button class="media__sound" type="button" aria-pressed="false" hidden>
+                        <svg class="icon icon--off" aria-hidden="true"><use href="#i-sound-off"/></svg>
+                        <svg class="icon icon--on" aria-hidden="true"><use href="#i-sound-on"/></svg>
+                        <span class="media__sound-label">Tap for sound</span>
+                    </button>
+                </figure>
+
+                <!-- Flipping ID card: hover (mouse), tap (touch), Enter/Space (keyboard), Esc to flip back -->
+                <div class="hero__card">
+                    <div class="idcard" data-idcard>
+                        <div class="idcard__inner">
+
+                            <button class="idcard__face idcard__front" type="button" aria-label="Ammar Akhund, AI Builder and Student in Winnipeg. Flip card for links.">
+                                <span class="idcard__row">
+                                    <span class="idcard__kicker">Builder ID</span>
+                                    <span class="idcard__chip" aria-hidden="true"></span>
+                                </span>
+                                <span class="idcard__body">
+                                    <span class="idcard__photo">
+                                        <span class="idcard__initials" aria-hidden="true">AA</span>
+                                        <img src="assets/hero-poster.jpg" alt="" width="160" height="200" loading="lazy" data-optional>
+                                    </span>
+                                    <span class="idcard__fields">
+                                        <span class="idcard__label">Name</span>
+                                        <span class="idcard__name">Ammar Akhund</span>
+                                        <span class="idcard__label">Role</span>
+                                        <span class="idcard__role">AI Builder &amp; Student — Winnipeg</span>
+                                        <span class="idcard__label">ID</span>
+                                        <span class="idcard__id">0001-WPG-CA</span>
+                                    </span>
+                                </span>
+                                <span class="idcard__row">
+                                    <span class="idcard__barcode" aria-hidden="true"></span>
+                                    <span class="idcard__hint" aria-hidden="true"><span class="hint--hover">Hover to flip</span><span class="hint--tap">Tap to flip</span></span>
+                                </span>
+                            </button>
+
+                            <div class="idcard__face idcard__back">
+                                <span class="idcard__row">
+                                    <span class="idcard__kicker">Connect</span>
+                                    <button class="idcard__unflip" type="button" data-unflip>↺ Flip back</button>
+                                </span>
+                                <p class="idcard__bio">I ship AI tools for people I actually know, then make them better every week.</p>
+                                <div class="idcard__links">
+                                    <a class="idcard__link" data-link="github" href="#">
+                                        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                                        <span>GitHub</span>
+                                    </a>
+                                    <a class="idcard__link" data-link="linkedin" href="#">
+                                        <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
+                                <p class="idcard__now"><span>Now</span> AI setups for small businesses</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Steps 2–4 add: #proof, #projects, #skills, #journey, #services, #contact -->
+
     </main>
 
-    <!-- Dependencies -->
-    <!-- Three.js (Required for Vanta) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <!-- Vanta NET -->
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <!-- Lenis Smooth Scroll -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Custom Script -->
-    <script src="script.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
