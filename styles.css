@@ -291,9 +291,31 @@ a {
     flex-direction: column;
 }
 
-.project-card h3 {
-    font-size: 1.4rem;
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
     margin-bottom: 0.5rem;
+}
+
+.project-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+.github-link {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-top: -0.25rem;
+}
+
+.github-link:hover {
+    color: var(--accent-1);
+    transform: scale(1.1);
 }
 
 .project-date {
