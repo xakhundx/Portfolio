@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="100%">
+  <rect width="1200" height="150" rx="16" fill="#060608"/>
+  <rect x="1" y="1" width="1198" height="148" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.15"/>
+  <text x="600" y="58" text-anchor="middle" fill="#e4e4e7" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22">"Every dataset carries a decision. Every thought deserves execution."</text>
+  <text x="600" y="96" text-anchor="middle" fill="#ffffff" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="3">AMMAR AKHUND · WINNIPEG, MANITOBA · PUBLIC SERVICE, ECONOMICS &amp; AI</text>
+  <text x="600" y="122" text-anchor="middle" fill="#71717a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="1.5">xakhundx.github.io/Portfolio · linkedin.com/in/ammar-akhund-145b17245</text>
+</svg>

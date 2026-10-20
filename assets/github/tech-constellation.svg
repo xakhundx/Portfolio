@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 310" width="100%">
+  <defs>
+    <linearGradient id="tbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070709"/>
+      <stop offset="100%" stop-color="#111116"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="310" rx="18" fill="url(#tbg)"/>
+  <rect x="1" y="1" width="1198" height="308" rx="17" fill="none" stroke="#ffffff" stroke-opacity="0.16"/>
+
+  <text x="48" y="44" fill="#a1a1aa" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.5">PERIODIC MATRIX // 30 PRODUCTION CAPABILITIES ACROSS 4 DOMAINS</text>
+
+  <!-- 4 Domain Columns -->
+  <g transform="translate(48, 68)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <!-- Col 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="262" height="206" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.2"/>
+      <text x="20" y="30" fill="#ffffff" font-size="12" font-weight="700" letter-spacing="1">01 // DATA &amp; LANGUAGES</text>
+      <line x1="20" y1="42" x2="242" y2="42" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="20" y="70" fill="#e4e4e7" font-size="13">[Py] Python · Pandas / ETL</text>
+      <text x="20" y="96" fill="#e4e4e7" font-size="13">[R]  R Stats · ANOVA / Reg</text>
+      <text x="20" y="122" fill="#e4e4e7" font-size="13">[Sq] SQL · Relational</text>
+      <text x="20" y="148" fill="#e4e4e7" font-size="13">[Ts] TypeScript &amp; ES2024</text>
+      <text x="20" y="174" fill="#e4e4e7" font-size="13">[C]  C (Cert) · Java · HTML/CSS</text>
+    </g>
+
+    <!-- Col 2 -->
+    <g transform="translate(280, 0)">
+      <rect width="262" height="206" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.2"/>
+      <text x="20" y="30" fill="#ffffff" font-size="12" font-weight="700" letter-spacing="1">02 // AI, ML &amp; BI TOOLS</text>
+      <line x1="20" y1="42" x2="242" y2="42" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="20" y="70" fill="#e4e4e7" font-size="13">[Gm] Google Gemini API</text>
+      <text x="20" y="96" fill="#e4e4e7" font-size="13">[Cl] Claude &amp; Agentic LLMs</text>
+      <text x="20" y="122" fill="#e4e4e7" font-size="13">[Xg] XGBoost &amp; scikit-learn</text>
+      <text x="20" y="148" fill="#e4e4e7" font-size="13">[Pb] Power BI (Cert) &amp; Tableau</text>
+      <text x="20" y="174" fill="#e4e4e7" font-size="13">[3D] Three.js / React Three Fiber</text>
+    </g>
+
+    <!-- Col 3 -->
+    <g transform="translate(560, 0)">
+      <rect width="262" height="206" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.2"/>
+      <text x="20" y="30" fill="#ffffff" font-size="12" font-weight="700" letter-spacing="1">03 // ECON &amp; FINANCE</text>
+      <line x1="20" y1="42" x2="242" y2="42" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="20" y="70" fill="#e4e4e7" font-size="13">[Ec] Econometrics &amp; Policy</text>
+      <text x="20" y="96" fill="#e4e4e7" font-size="13">[Tf] Time Series Forecasting</text>
+      <text x="20" y="122" fill="#e4e4e7" font-size="13">[Fm] Private Bank Portfolio Sim</text>
+      <text x="20" y="148" fill="#e4e4e7" font-size="13">[Rk] Operational Risk &amp; KYC</text>
+      <text x="20" y="174" fill="#e4e4e7" font-size="13">[Sp] SAP ERP · Adv Excel · Audit</text>
+    </g>
+
+    <!-- Col 4 -->
+    <g transform="translate(840, 0)">
+      <rect width="264" height="206" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.2"/>
+      <text x="20" y="30" fill="#ffffff" font-size="12" font-weight="700" letter-spacing="1">04 // PUBLIC &amp; OPS</text>
+      <line x1="20" y1="42" x2="244" y2="42" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="20" y="70" fill="#e4e4e7" font-size="13">[Ps] Gov of Manitoba Service</text>
+      <text x="20" y="96" fill="#e4e4e7" font-size="13">[Cr] 4+ Yrs Client Retention</text>
+      <text x="20" y="122" fill="#e4e4e7" font-size="13">[Sc] 8 Spoken Languages</text>
+      <text x="20" y="148" fill="#e4e4e7" font-size="13">[Cf] Frontline De-escalation</text>
+      <text x="20" y="174" fill="#e4e4e7" font-size="13">[Ld] NPN '26 · Campus Clubs</text>
+    </g>
+  </g>
+</svg>

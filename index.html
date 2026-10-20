@@ -10,21 +10,39 @@
     <meta property="og:description" content="I turn data into decisions &amp; thoughts into actions. Government of Manitoba · University of Manitoba (Economics &amp; Statistics) · Creator of Focus Arena.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/hero-poster.jpg">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='black'/><text x='50%' y='54%' font-family='monospace' font-weight='700' font-size='28' fill='white' text-anchor='middle' dominant-baseline='middle'>AA</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='black' stroke='white' stroke-width='2'/><text x='50%' y='54%' font-family='monospace' font-weight='700' font-size='26' fill='white' text-anchor='middle' dominant-baseline='middle'>AA</text></svg>">
 
     <!-- Mark JS as available so scroll-reveal styles only apply when they can be undone -->
     <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Fonts: Inter (UI) + JetBrains Mono (labels, symbols, numbers) -->
+    <!-- Fonts: Inter (UI) + Syne (editorial display) + JetBrains Mono (labels, symbols, numbers) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Icon sprite: reference with <svg><use href="#i-name"/></svg> -->
-    <svg xmlns="http://www.w3.org/2000/svg" hidden>
+    <!-- ============================== SVG SPRITE & LIQUID GLASS / METAL FILTERS ============================== -->
+    <svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
+        <defs>
+            <!-- Apple Liquid-Glass subtle specular refraction filter (inspired by liquid-glass-js) -->
+            <filter id="liquid-glass-refract" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015 0.015" numOctaves="2" seed="7" result="noise"/>
+                <feGaussianBlur in="noise" stdDeviation="2" result="smoothNoise"/>
+                <feDisplacementMap in="SourceGraphic" in2="smoothNoise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+
+            <!-- Liquid-Metal chrome gradient for monogram & preloader (inspired by liquid-logo) -->
+            <linearGradient id="liquid-chrome-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="32%" stop-color="#cfcfcf"/>
+                <stop offset="50%" stop-color="#6e6e6e"/>
+                <stop offset="68%" stop-color="#f5f5f5"/>
+                <stop offset="100%" stop-color="#9e9e9e"/>
+            </linearGradient>
+        </defs>
+
         <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
         <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
         <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85 0-3.2.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></symbol>
@@ -34,20 +52,62 @@
         <symbol id="i-sound-on" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></g></symbol>
         <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
         <symbol id="i-arrow-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+        <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.35 7.15L21.5 11.5l-7.15 2.35L12 21l-2.35-7.15L2.5 11.5l7.15-2.35L12 2z"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
     </svg>
+
+    <!-- ============================== LIQUID-METAL WATER-FILL PRELOADER ============================== -->
+    <div class="preloader" data-preloader aria-hidden="true">
+        <div class="preloader__inner">
+            <p class="preloader__kicker">PORTFOLIO // WINNIPEG, MB</p>
+            <svg class="preloader__svg" viewBox="0 0 560 150" role="presentation">
+                <defs>
+                    <clipPath id="preloader-text-clip">
+                        <text x="280" y="114" text-anchor="middle" class="preloader__svg-text">Ammar.</text>
+                    </clipPath>
+                </defs>
+                <!-- Dim outline base -->
+                <text x="280" y="114" text-anchor="middle" class="preloader__svg-text preloader__svg-outline">Ammar.</text>
+                <!-- Liquid chrome rising fill clipped to text -->
+                <g clip-path="url(#preloader-text-clip)">
+                    <g class="preloader__wave-group" data-preloader-wave>
+                        <path class="preloader__wave" d="M 0,18 Q 70,0 140,18 T 280,18 T 420,18 T 560,18 T 700,18 T 840,18 T 980,18 T 1120,18 L 1120,220 L 0,220 Z" fill="url(#liquid-chrome-grad)"/>
+                    </g>
+                </g>
+            </svg>
+            <div class="preloader__meta">
+                <span class="preloader__status">INITIALIZING SHADER &amp; DATA ENGINE</span>
+                <span class="preloader__pct" data-preloader-pct>100%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== INTERACTIVE SHADERGRADIENT + 3D CONSTELLATION CANVAS ============================== -->
+    <canvas class="bg-canvas" data-bg-canvas aria-hidden="true"></canvas>
+    <div class="bg-vignette" aria-hidden="true"></div>
 
     <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- ============================== NAV ============================== -->
     <header class="nav" id="top">
         <div class="container nav__inner">
-            <a href="#top" class="nav__logo" aria-label="Ammar Akhund, back to top">AA</a>
+            <a href="#top" class="nav__logo" aria-label="Ammar Akhund, back to top">
+                <span class="nav__logo-metal">AA</span>
+                <span class="nav__logo-ring" aria-hidden="true"></span>
+            </a>
             <nav aria-label="Primary">
                 <ul class="nav__links">
                     <li class="nav__hide-sm"><a href="#projects">Projects</a></li>
                     <li class="nav__hide-sm"><a href="#experience">Experience</a></li>
-                    <li class="nav__hide-sm"><a href="#skills">Skills</a></li>
+                    <li class="nav__hide-sm"><a href="#skills">Skills (30)</a></li>
                     <li class="nav__hide-sm"><a href="#journey">Journey</a></li>
+                    <li class="nav__hide-sm"><a href="#services">Venture &amp; AI</a></li>
+                    <li>
+                        <button type="button" class="nav__fx" data-fx-toggle aria-pressed="true" title="Toggle interactive background shader">
+                            <span class="nav__fx-dot"></span>
+                            <span>3D FX</span>
+                        </button>
+                    </li>
                     <li><a href="#contact" class="nav__cta">Contact</a></li>
                 </ul>
             </nav>
@@ -62,45 +122,83 @@
 
                 <!-- Headline first on mobile so the core message lands above the fold -->
                 <div class="hero__copy">
-                    <p class="eyebrow">Ammar Akhund <span aria-hidden="true">·</span> Government of Manitoba <span aria-hidden="true">·</span> UofM '27</p>
-                    <h1 id="hero-title" class="hero__title">I turn data into decisions &amp; thoughts into actions.</h1>
-                    <p class="hero__sub">Public servant at the <strong>Government of Manitoba</strong> (Dept. of Housing, Addictions &amp; Homelessness, NPN '26 Nominee), final-year <strong>Economics &amp; Statistics</strong> student at the University of Manitoba, and builder of AI &amp; data tools real people use.</p>
+                    <div class="eyebrow-pill">
+                        <span class="eyebrow-pill__dot" aria-hidden="true"></span>
+                        <span>Ammar Akhund · Gov of Manitoba · UofM Econ &amp; Stats '27</span>
+                    </div>
+                    <h1 id="hero-title" class="hero__title">
+                        I turn <span class="text-liquid">data into decisions</span> &amp; thoughts into actions.
+                    </h1>
+                    <p class="hero__sub">Public servant at the <strong>Government of Manitoba</strong> (Dept. of Housing, Addictions &amp; Homelessness · <strong>NPN '26 Nominee</strong>), final-year <strong>Economics &amp; Statistics</strong> student at the University of Manitoba, and builder of AI products, ML forecasters &amp; business automations.</p>
                     <div class="hero__ctas">
-                        <a href="#projects" class="btn btn--solid">View Projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                        <a href="#experience" class="btn btn--ghost">Experience &amp; Background</a>
+                        <a href="#projects" class="btn btn--solid">Explore Shipped Work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                        <a href="#services" class="btn btn--ghost glass-pill">Venture &amp; AI Services</a>
+                        <a href="#experience" class="btn btn--ghost glass-pill">Public Service &amp; Bio</a>
                     </div>
                 </div>
 
-                <!-- Portrait / Talking video frame -->
-                <figure class="hero__media" data-hero-media>
+                <!-- Portrait / Interactive Live Presentation & Video Stage -->
+                <figure class="hero__media glass-card" data-hero-media data-tilt-card>
                     <div class="media__fallback" aria-hidden="true">
                         <span class="media__mono">AA</span>
                         <span class="media__note">Ammar Akhund</span>
                     </div>
+
                     <img class="media__poster" src="assets/hero-poster.jpg" alt="Portrait of Ammar Akhund" width="800" height="800" fetchpriority="high" data-optional>
+
                     <video class="media__video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="Ammar introduces himself and what he builds">
                         <source src="assets/hero.mp4" type="video/mp4">
                         <track kind="captions" src="assets/hero.vtt" srclang="en" label="English" default>
                     </video>
-                    <div class="media__badge" aria-hidden="true">
-                        <span class="media__dot"></span>
-                        <span>Winnipeg, MB · Open to Data, Policy &amp; AI Roles</span>
+
+                    <!-- Specular Glare Overlay -->
+                    <div class="media__glare" aria-hidden="true"></div>
+
+                    <!-- Top Telemetry / Presentation Header -->
+                    <div class="media__hud-top">
+                        <span class="media__status">
+                            <span class="media__dot"></span>
+                            <span data-stage-mode-label>LIVE BRIEFING STAGE</span>
+                        </span>
+                        <div class="media__slide-dots" data-slide-dots role="tablist" aria-label="Presentation slides"></div>
                     </div>
-                    <button class="media__sound" type="button" aria-pressed="false" hidden>
-                        <svg class="icon icon--off" aria-hidden="true"><use href="#i-sound-off"/></svg>
-                        <svg class="icon icon--on" aria-hidden="true"><use href="#i-sound-on"/></svg>
-                        <span class="media__sound-label">Tap for sound</span>
-                    </button>
+
+                    <!-- Live Caption / Briefing Bubble (active when Live Briefing or Video runs) -->
+                    <div class="media__caption-box" data-briefing-box hidden>
+                        <span class="media__caption-tag">LIVE VOICE BRIEFING</span>
+                        <p class="media__caption-text" data-briefing-text>"Hey, I'm Ammar — public servant at the Government of Manitoba, Economics &amp; Statistics at UofM, and creator of Focus Arena."</p>
+                    </div>
+
+                    <!-- Bottom Interactive Presentation Deck + Unmute / Briefing Trigger -->
+                    <div class="media__hud-bottom">
+                        <button type="button" class="media__deck" data-slide-next aria-label="Next presentation highlight">
+                            <span class="media__deck-code" data-slide-code>SLIDE 01 // PUBLIC SERVICE</span>
+                            <span class="media__deck-title" data-slide-title>Government of Manitoba · NPN '26 Nominee</span>
+                            <span class="media__deck-metric" data-slide-metric>Dept. of Housing, Addictions &amp; Homelessness · Tap to cycle →</span>
+                        </button>
+
+                        <button class="media__sound" type="button" data-stage-audio-btn aria-pressed="false">
+                            <span class="media__sound-ring" aria-hidden="true"></span>
+                            <svg class="icon icon--off" aria-hidden="true"><use href="#i-sound-off"/></svg>
+                            <svg class="icon icon--on" aria-hidden="true"><use href="#i-sound-on"/></svg>
+                            <span class="media__sound-label" data-stage-audio-label>Live Intro</span>
+                        </button>
+                    </div>
                 </figure>
 
-                <!-- Flipping ID card: hover (mouse), tap (touch), Enter/Space (keyboard), Esc to flip back -->
+                <!-- 3D Flipping Lanyard ID card: hover (mouse), tap (touch), Enter/Space (keyboard), Esc to flip back -->
                 <div class="hero__card">
                     <div class="idcard" data-idcard>
+                        <!-- Metallic Lanyard Clip (inspired by Sushmita's 3D badge) -->
+                        <div class="idcard__lanyard" aria-hidden="true">
+                            <span class="idcard__strap"></span>
+                            <span class="idcard__clip"></span>
+                        </div>
                         <div class="idcard__inner">
 
                             <button class="idcard__face idcard__front" type="button" aria-label="Ammar Akhund — Government of Manitoba, Economics and Statistics at UofM. Flip card for links.">
                                 <span class="idcard__row">
-                                    <span class="idcard__kicker">Profile ID · WPG</span>
+                                    <span class="idcard__kicker">VERIFIED ID · WPG-MB</span>
                                     <span class="idcard__chip" aria-hidden="true"></span>
                                 </span>
                                 <span class="idcard__body">
@@ -119,7 +217,7 @@
                                 </span>
                                 <span class="idcard__row">
                                     <span class="idcard__barcode" aria-hidden="true"></span>
-                                    <span class="idcard__hint" aria-hidden="true"><span class="hint--hover">Hover to flip</span><span class="hint--tap">Tap to flip</span></span>
+                                    <span class="idcard__hint" aria-hidden="true"><span class="hint--hover">Hover 3D Flip ↻</span><span class="hint--tap">Tap 3D Flip ↻</span></span>
                                 </span>
                             </button>
 
@@ -160,11 +258,24 @@
         <section class="section" id="projects" aria-labelledby="projects-title">
             <div class="container">
                 <div class="section__head reveal">
-                    <p class="eyebrow">01 · Shipped Work</p>
-                    <h2 id="projects-title" class="section__title">AI Products, ML Pipelines &amp; Data Models</h2>
-                    <p class="section__sub">From a live 3D AI focus workspace to 24-hour wholesale electricity price forecasting and econometric analysis.</p>
+                    <p class="eyebrow">01 · Shipped Work &amp; Engineering</p>
+                    <h2 id="projects-title" class="section__title">AI Products, ML Pipelines &amp; Econometric Models</h2>
+                    <p class="section__sub">From a live 3D AI focus workspace with zero API-key friction to 24-hour wholesale electricity price forecasting (co-built with Marwan Hamed) and executive BI dashboards.</p>
                 </div>
+
                 <div class="projects__grid" data-projects-grid></div>
+
+                <!-- Upcoming Lab Builds (Next 3 Gemini Projects Pipeline) -->
+                <div class="lab-strip reveal">
+                    <div class="lab-strip__head">
+                        <div>
+                            <p class="eyebrow">Next Up in the Lab</p>
+                            <h3 class="lab-strip__title">Upcoming AI &amp; Data Builds in Progress</h3>
+                        </div>
+                        <span class="lab-strip__badge">3 Pipeline Slots Ready</span>
+                    </div>
+                    <div class="lab-strip__grid" data-upcoming-grid></div>
+                </div>
             </div>
         </section>
 
@@ -177,41 +288,78 @@
                     <p class="section__sub">Serving Manitobans at the Government of Manitoba after nearly four years in retail operations at Loblaw, alongside finance simulations, campus tech clubs, and healthcare/NGO volunteering.</p>
                 </div>
 
-                <div class="exp__grid" data-experience-grid></div>
+                <div class="exp__timeline-wrap">
+                    <!-- Scroll-drawn SVG path (inspired by Sushmita's Expertise scroll path) -->
+                    <svg class="exp__svg-line" data-exp-svg viewBox="0 0 20 1000" preserveAspectRatio="none" aria-hidden="true">
+                        <line x1="10" y1="0" x2="10" y2="1000" class="exp__svg-track"/>
+                        <line x1="10" y1="0" x2="10" y2="1000" class="exp__svg-draw" data-exp-draw/>
+                    </svg>
+                    <div class="exp__grid" data-experience-grid></div>
+                </div>
 
                 <div class="edu-comm__grid">
-                    <div class="edu-card reveal" data-education-card></div>
-                    <div class="comm-card reveal" data-community-card></div>
+                    <div class="edu-card glass-card reveal" data-education-card></div>
+                    <div class="comm-card glass-card reveal" data-community-card></div>
                 </div>
             </div>
         </section>
 
-        <!-- ============================== 5. PERIODIC TABLE OF SKILLS ============================== -->
+        <!-- ============================== 5. PERIODIC TABLE OF SKILLS (3D FLIPPING ELEMENTS) ============================== -->
         <section class="section section--bordered" id="skills" aria-labelledby="skills-title">
             <div class="container">
                 <div class="section__head reveal">
-                    <p class="eyebrow">03 · Technical, Analytical &amp; Operational</p>
+                    <p class="eyebrow">03 · Interactive 3D Element Matrix</p>
                     <h2 id="skills-title" class="section__title">Periodic Table of Skills</h2>
-                    <p class="section__sub">Tap or hover any element tile for details. Grouped by shade: Data &amp; Languages, AI &amp; BI Tools, Economics &amp; Finance, and Public Service &amp; Operations.</p>
+                    <p class="section__sub">Every element tile flips in 3D on hover or tap to reveal how I apply it in production. Filter by discipline or flip the entire matrix at once.</p>
                 </div>
 
-                <div class="ptable__legend reveal" role="list" aria-label="Skill categories">
-                    <span class="legend__item" role="listitem"><span class="legend__swatch legend__swatch--lang"></span>Data &amp; Languages</span>
-                    <span class="legend__item" role="listitem"><span class="legend__swatch legend__swatch--ai"></span>AI, ML &amp; BI</span>
-                    <span class="legend__item" role="listitem"><span class="legend__swatch legend__swatch--econ"></span>Economics &amp; Finance</span>
-                    <span class="legend__item" role="listitem"><span class="legend__swatch legend__swatch--ops"></span>Public Service &amp; Ops</span>
+                <div class="ptable__toolbar reveal">
+                    <div class="ptable__filters" role="tablist" aria-label="Filter skills by category" data-skill-filters>
+                        <button type="button" class="filter-pill is-active" data-filter="all" role="tab" aria-selected="true">
+                            <span>All Elements (30)</span>
+                        </button>
+                        <button type="button" class="filter-pill" data-filter="lang" role="tab" aria-selected="false">
+                            <span class="legend__swatch legend__swatch--lang"></span>
+                            <span>Data &amp; Languages (8)</span>
+                        </button>
+                        <button type="button" class="filter-pill" data-filter="ai" role="tab" aria-selected="false">
+                            <span class="legend__swatch legend__swatch--ai"></span>
+                            <span>AI, ML &amp; BI (8)</span>
+                        </button>
+                        <button type="button" class="filter-pill" data-filter="econ" role="tab" aria-selected="false">
+                            <span class="legend__swatch legend__swatch--econ"></span>
+                            <span>Economics &amp; Finance (8)</span>
+                        </button>
+                        <button type="button" class="filter-pill" data-filter="ops" role="tab" aria-selected="false">
+                            <span class="legend__swatch legend__swatch--ops"></span>
+                            <span>Public Service &amp; Ops (6)</span>
+                        </button>
+                    </div>
+
+                    <button type="button" class="filter-pill filter-pill--action" data-flip-all-skills aria-pressed="false">
+                        <span>Flip All 30 Tiles ↻</span>
+                    </button>
                 </div>
 
                 <div class="ptable__grid" data-skills-grid role="list" aria-label="Periodic table of skills"></div>
-                <p class="ptable__inspector" data-skill-inspector aria-live="polite">Select or hover a tile to inspect how I use it.</p>
+                <div class="ptable__inspector glass-card" data-skill-inspector aria-live="polite">
+                    Select or hover any element tile to flip it in 3D and inspect production proof.
+                </div>
 
+                <!-- 3D Flipping Certifications & Spoken Languages -->
                 <div class="creds__grid">
-                    <div class="creds__box reveal">
-                        <h3 class="creds__title">Licenses &amp; Certifications</h3>
-                        <ul class="creds__list" data-certs-list></ul>
+                    <div class="creds__box glass-card reveal">
+                        <div class="creds__header-row">
+                            <h3 class="creds__title">System Badges · Licenses &amp; Certifications (5)</h3>
+                            <span class="creds__hint">Hover / Tap card to flip &amp; verify ↻</span>
+                        </div>
+                        <div class="cert-flip-grid" data-certs-list></div>
                     </div>
-                    <div class="creds__box reveal">
-                        <h3 class="creds__title">Spoken Languages (8)</h3>
+                    <div class="creds__box glass-card reveal">
+                        <div class="creds__header-row">
+                            <h3 class="creds__title">Multilingual Fluency (8 Spoken Languages)</h3>
+                            <span class="creds__hint">Global &amp; Public Service Ready</span>
+                        </div>
                         <ul class="langs__list" data-langs-list></ul>
                     </div>
                 </div>
@@ -223,7 +371,7 @@
             <div class="container">
                 <div class="journey__header reveal">
                     <div>
-                        <p class="eyebrow">04 · Timeline</p>
+                        <p class="eyebrow">04 · Chronological Trajectory</p>
                         <h2 id="journey-title" class="section__title">The Journey So Far</h2>
                     </div>
                     <div class="journey__controls" aria-label="Scroll timeline">
@@ -241,7 +389,7 @@
             </div>
         </section>
 
-        <!-- ============================== 7. SERVICES & OPPORTUNITIES ============================== -->
+        <!-- ============================== 7. VENTURE STUDIO, AI SERVICES & OPPORTUNITIES ============================== -->
         <section class="section" id="services" aria-labelledby="services-title">
             <div class="container">
                 <div class="services__panel reveal" data-services-panel></div>
@@ -255,16 +403,16 @@
         <div class="container footer__inner">
             <div class="footer__top">
                 <div>
-                    <p class="eyebrow">05 · Contact</p>
-                    <h2 id="contact-title" class="footer__title">Let's build or work together.</h2>
-                    <p class="footer__sub">Based in Winnipeg, Manitoba, Canada · Open to Data, Economics, Finance &amp; Public Policy opportunities, plus AI &amp; BI projects.</p>
+                    <p class="eyebrow">06 · Initiate Dialogue</p>
+                    <h2 id="contact-title" class="footer__title">Let's build, automate, or work together.</h2>
+                    <p class="footer__sub">Based in Winnipeg, Manitoba, Canada · Open to Data, Economics, Finance &amp; Public Policy roles, plus custom AI business setups and startup builds.</p>
                 </div>
                 <div class="footer__actions">
                     <a class="btn btn--solid" data-link="email" href="#">
                         <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
                         <span>ammar.akhund2017@gmail.com</span>
                     </a>
-                    <a class="btn btn--ghost" data-link="linkedin" href="#">
+                    <a class="btn btn--ghost glass-pill" data-link="linkedin" href="#">
                         <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
                         <span>Connect on LinkedIn (1K+)</span>
                     </a>
@@ -272,32 +420,37 @@
             </div>
 
             <div class="footer__links">
-                <a class="footer__pill" data-link="linkedin" href="#">
+                <a class="footer__pill glass-pill" data-link="linkedin" href="#">
                     <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
                     <span>LinkedIn</span>
                     <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg>
                 </a>
-                <a class="footer__pill" data-link="github" href="#">
+                <a class="footer__pill glass-pill" data-link="github" href="#">
                     <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
                     <span>GitHub (@xakhundx)</span>
                     <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg>
                 </a>
-                <a class="footer__pill" data-link="focusArena" href="#">
-                    <span>Focus Arena App</span>
+                <a class="footer__pill glass-pill" data-link="focusArena" href="#">
+                    <span>Focus Arena 3D App</span>
                     <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg>
                 </a>
-                <a class="footer__pill" data-link="instagram" href="#">
+                <a class="footer__pill glass-pill" data-link="instagram" href="#">
                     <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
                     <span>Instagram (@xakhundx)</span>
                     <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg>
                 </a>
-                <a class="footer__pill" data-link="phone" href="#">
+                <a class="footer__pill glass-pill" data-link="phone" href="#">
                     <span>431-335-4259</span>
                 </a>
             </div>
 
+            <!-- Giant Editorial Wordmark (inspired by videoportfolio-kohl.vercel.app) -->
+            <div class="footer__giant" aria-hidden="true">
+                <span class="footer__giant-text">AMMAR AKHUND</span>
+            </div>
+
             <div class="footer__bottom">
-                <span>© 2026 Ammar Akhund · Winnipeg, Manitoba, Canada</span>
+                <span>© 2026 Ammar Akhund · Winnipeg, Manitoba, Canada · Liquid-Glass &amp; WebGL Edition</span>
                 <a href="#top" class="footer__top-link">Back to top ↑</a>
             </div>
         </div>
