@@ -559,10 +559,17 @@
             else video.addEventListener('loadeddata', onVideoReady, { once: true });
         }
 
+        // Optional voice track (if Ammar drops his recorded voice in assets/hero-voice.mp3)
+        let voiceAudio = null;
+        try {
+            voiceAudio = new Audio('assets/hero-voice.mp3');
+            voiceAudio.preload = 'metadata';
+        } catch (_) {}
+
         const stopBriefing = () => {
             briefingActive = false;
             if (briefingTimer) { clearInterval(briefingTimer); briefingTimer = null; }
-            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            if (voiceAudio) { voiceAudio.pause(); voiceAudio.currentTime = 0; }
             if (briefingBox) briefingBox.hidden = true;
             fig.classList.remove('is-briefing');
             if (audioBtn) audioBtn.setAttribute('aria-pressed', 'false');
@@ -574,7 +581,7 @@
             fig.classList.add('is-briefing');
             if (briefingBox) briefingBox.hidden = false;
             if (audioBtn) audioBtn.setAttribute('aria-pressed', 'true');
-            if (audioLabel) audioLabel.textContent = 'Stop Intro';
+            if (audioLabel) audioLabel.textContent = 'Close Intro';
 
             let lineIdx = 0;
             const showLine = (i) => {
@@ -583,15 +590,14 @@
             };
             showLine(0);
 
-            if ('speechSynthesis' in window) {
-                try {
-                    window.speechSynthesis.cancel();
-                    const utter = new SpeechSynthesisUtterance(briefingLines.join(' '));
-                    utter.rate = 1.03;
-                    utter.pitch = 1.0;
-                    utter.onend = () => stopBriefing();
-                    window.speechSynthesis.speak(utter);
-                } catch (_) {}
+            // If Ammar provided assets/hero-voice.mp3, play his real voice:
+            if (voiceAudio) {
+                voiceAudio.currentTime = 0;
+                voiceAudio.play().then(() => {
+                    voiceAudio.onended = () => stopBriefing();
+                }).catch(() => {
+                    // If no audio file exists, briefing proceeds cleanly and silently
+                });
             }
 
             briefingTimer = setInterval(() => {
